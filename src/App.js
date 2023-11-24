@@ -44,21 +44,40 @@ function App() {
 
         {data.name != undefined && (
           <div className='bottom'>
-            <div className='feels'>
-              {data.main ? (
-                <p className='bold'>{data.main.feels_like.toFixed()}º</p>
-              ) : null}
-              <p>Feels like</p>
+            <div className='row'>
+              <div className='feels'>
+                {data.main ? (
+                  <p className='bold'>{data.main.feels_like.toFixed()}º</p>
+                ) : null}
+                <p>Feels like</p>
+              </div>
+              <div className='feels'>
+                {data.main ? (
+                  <p className='bold'>{data.main.temp_max.toFixed()}º</p>
+                ) : null}
+                <p>Max temp.</p>
+              </div>
+              <div className='humidity'>
+                {data.main ? (
+                  <p className='bold'>{data.main.temp_min.toFixed()}º</p>
+                ) : null}
+                <p>Min temp.</p>
+              </div>
             </div>
-            <div className='humidity'>
-              {data.main ? <p className='bold'>{data.main.humidity}%</p> : null}
-              <p>Humidity</p>
-            </div>
-            <div className='wind'>
-              {data.wind ? (
-                <p className='bold'>{data.wind.speed} KM/H</p>
-              ) : null}
-              <p>Wind speed</p>
+
+            <div className='row'>
+              <div className='humidity'>
+                {data.main ? (
+                  <p className='bold'>{data.main.humidity}%</p>
+                ) : null}
+                <p>Humidity</p>
+              </div>
+              <div className='wind'>
+                {data.wind ? (
+                  <p className='bold'>{data.wind.speed} KM/H</p>
+                ) : null}
+                <p>Wind speed</p>
+              </div>
             </div>
           </div>
         )}
